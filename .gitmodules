@@ -1,0 +1,3 @@
+[submodule "automerge-git-merge-driver"]
+	path = automerge-git-merge-driver
+	url = https://github.com/pvh/automerge-git-merge-driver
