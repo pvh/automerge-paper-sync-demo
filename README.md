@@ -25,6 +25,23 @@ $ git config --local merge.automerge-driver.driver "node automerge-git-merge-dri
 
 After running these commands, you should automatically merge conflicting edits to the .mrg document using the driver described above.
 
+# Testing
+
+* Open paper.md in your newly extended VSCode. Make some edits. Save.
+* `paper.md.mrg` should have changed.
+* Commit the changes.
+* `git checkout -b test-branch`
+* Make & save a change to the document.
+* Commit both files.
+* `git checkout main`
+* Make & save a change to the document (you should see the pre-test-branch document when you do this.)
+* Commit both files.
+* Now you have a binary file conflict brewing when you merge `test-branch` back into main.
+* `git merge test-branch`
+* Notice that the .mrg file merged automatically by running the git-merge driver you configured above.
+
 # BUGS
 
 I'm sure there are loads. This is a fragile prototype. Please report them somewhere, or better yet, fix them.
+
+What happens if both branches edit the same line? The automerge should be fine but it will probably lose consistency with the text in git.
