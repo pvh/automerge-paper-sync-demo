@@ -1,1 +1,2 @@
 *.mrg merge=automerge-driver
+*.md merge=automerge-text-driver
